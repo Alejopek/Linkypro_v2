@@ -366,3 +366,196 @@ header nav ul li a:hover {
   stroke-dasharray: 15, 310;
   stroke-dashoffset: 48;
 }
+
+.servicios {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  height: 60vh;
+}
+
+.servicios-container {
+  padding: 45px;
+}
+
+.servicios-container h2 {
+  font-family: "Fahkwang", Arial, sans-serif;
+  font-weight: 200;
+  margin-left: 20px;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.servicios-container_box {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(58, 58, 58);
+  margin: 20px;
+  padding: 40px;
+  height: 14rem;
+}
+
+.servicios-container h4 {
+  font-family: "Fahkwang", Arial, sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.servicios-container p {
+  margin-top: 25px;
+}
+
+.boton-detalles {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 40px;
+  max-width: 160px;
+  margin-top: 40px;
+  width: 100%;
+  position: relative;
+  text-transform: uppercase;
+  background: #51758e;
+  font-family: "Fahkwang", Arial, sans-serif;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  transition: background 0.2s, color 0.2s, letter-spacing 0.2s, font-weight 0.2s;
+}
+
+.boton-detalles svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 45px;
+  pointer-events: none;
+}
+
+.boton-detalles rect {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1;
+  stroke-dasharray: 422, 0;
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.boton-detalles:hover {
+  background: rgba(225, 51, 45, 0);
+  letter-spacing: 1px;
+  font-weight: 900;
+}
+.boton-detalles:hover rect {
+  stroke-width: 5;
+  stroke-dasharray: 15, 310;
+  stroke-dashoffset: 48;
+}
+
+.muestras {
+  display: flex;
+  height: 120vh;
+  background: linear-gradient(
+      to right,
+      transparent 49.9%,
+      #000000 49.9%,
+      #000000 50.1%,
+      transparent 50.1%
+    ),
+    url("https://images.pexels.com/photos/32845692/pexels-photo-32845692.jpeg")
+      left center/50% 100% no-repeat,
+    url("") right center/50% 100% no-repeat;
+  background-color: black;
+}
+
+.muestras-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-color: rgb(0, 0, 0);
+  width: 50%;
+  height: 120vh;
+  margin-left: 50%;
+  padding: 50px;
+}
+
+.muestras-container h2 {
+  font-family: "Fahkwang", Arial, sans-serif;
+  font-weight: 200;
+  font-size: 40px;
+  margin-bottom: 40px;
+  margin-left: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.galeria {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.galeria-img-container {
+  width: 500px;
+  height: 400px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.galeria-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.galeria-img-container img.fade-out {
+  opacity: 0;
+}
+
+.galeria-info {
+  text-align: center;
+  margin-bottom: 16px;
+  transition: opacity 0.5s;
+}
+
+.galeria-info.fade-out {
+  opacity: 0;
+}
+
+.galeria-controles {
+  display: flex;
+  gap: 16px;
+}
+
+.galeria-controles button {
+  background: #51758e;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.galeria-controles button:hover {
+  background: #00dfd8;
+  color: #000;
+}
+
+.contacto {
+  display: flex;
+  padding: 50px;
+  height: 80vh;
+  background-color: black;
+}
