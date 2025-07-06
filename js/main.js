@@ -1,49 +1,138 @@
 const portafolios = [{
     img: "img/portafolio1.png",
-    autor: "John Doe",
+    autor: "Debbie O'Brien",
     nombre: "Creativo Digital"
   },
   {
     img: "img/portafolio2.png",
-    autor: "Jane Smith",
+    autor: "Adri",
     nombre: "Arte y Luz"
   },
   {
     img: "img/portafolio3.jpg",
-    autor: "Carlos Ruiz",
+    autor: "John Carter",
     nombre: "Visión Moderna"
   }
 ];
 
 let actual = 0;
 
-const img = document.getElementById('galeria-img');
+let img = document.getElementById('galeria-img');
 const autor = document.getElementById('galeria-autor');
 const nombre = document.getElementById('galeria-nombre');
-const prev = document.getElementById('galeria-prev');
-const next = document.getElementById('galeria-next');
 const info = document.querySelector('.galeria-info');
+const dots = document.querySelectorAll('.dot');
 
 function mostrarPortafolio(idx) {
-  // Animación de fade out
-  img.classList.add('fade-out');
-  info.classList.add('fade-out');
+  // Crear nueva imagen
+  const nuevaImg = document.createElement('img');
+  nuevaImg.src = portafolios[idx].img;
+  nuevaImg.alt = portafolios[idx].nombre;
+  nuevaImg.className = 'slide-in';
+  nuevaImg.style.position = 'absolute';
+  nuevaImg.style.left = '0';
+  nuevaImg.style.top = '0';
+  nuevaImg.style.width = '100%';
+  nuevaImg.style.height = '100%';
+  nuevaImg.style.objectFit = 'contain';
+
+  // Imagen actual sale
+  img.classList.add('slide-out');
+
+  // Insertar la nueva imagen en el contenedor
+  const container = img.parentElement;
+  container.appendChild(nuevaImg);
+
+  // Animación para el texto (info)
+  const info = document.querySelector('.galeria-info');
+  info.classList.add('slide-out');
+
+  // Cambiar el texto a la mitad de la animación
   setTimeout(() => {
-    img.src = portafolios[idx].img;
-    img.alt = portafolios[idx].nombre;
-    autor.textContent = "Autor: " + portafolios[idx].autor;
-    nombre.textContent = "Portafolio: " + portafolios[idx].nombre;
-    img.classList.remove('fade-out');
-    info.classList.remove('fade-out');
+    info.querySelector('#galeria-autor').textContent = "Autor: " + portafolios[idx].autor;
+    info.querySelector('#galeria-nombre').textContent = "Portafolio: " + portafolios[idx].nombre;
+    info.classList.remove('slide-out');
+    info.classList.add('slide-in');
   }, 400);
+
+  // Quitar la imagen anterior y dejar la nueva después de la animación
+  setTimeout(() => {
+    container.removeChild(img);
+    nuevaImg.classList.remove('slide-in');
+    nuevaImg.removeAttribute('style');
+    nuevaImg.id = 'galeria-img';
+    img = nuevaImg;
+    info.classList.remove('slide-in');
+  }, 800);
+
+  // Actualizar dots activos
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === idx);
+  });
 }
 
-prev.addEventListener('click', () => {
-  actual = (actual - 1 + portafolios.length) % portafolios.length;
-  mostrarPortafolio(actual);
+dots.forEach(dot => {
+  dot.addEventListener('click', (e) => {
+    const idx = parseInt(dot.getAttribute('data-idx'));
+    if (actual !== idx) {
+      actual = idx;
+      mostrarPortafolio(actual);
+    }
+  });
 });
 
-next.addEventListener('click', () => {
-  actual = (actual + 1) % portafolios.length;
+// --- Slider automático ---
+let autoSlideInterval = null;
+let galeriaVisible = false;
+let userInteracting = false;
+
+function startAutoSlide() {
+  if (autoSlideInterval) clearInterval(autoSlideInterval);
+  autoSlideInterval = setInterval(() => {
+    if (galeriaVisible && !userInteracting) {
+      actual = (actual + 1) % portafolios.length;
+      mostrarPortafolio(actual);
+    }
+  }, 4000);
+}
+
+function stopAutoSlide() {
+  if (autoSlideInterval) clearInterval(autoSlideInterval);
+}
+
+// Detectar visibilidad de la galería
+const galeriaSection = document.querySelector('.muestras');
+const observer = new window.IntersectionObserver((entries) => {
+  galeriaVisible = entries[0].isIntersecting;
+  if (galeriaVisible) {
+    startAutoSlide();
+  } else {
+    stopAutoSlide();
+  }
+}, { threshold: 0.3 });
+observer.observe(galeriaSection);
+
+// Marcar interacción del usuario
+function userDidInteract() {
+  userInteracting = true;
+  setTimeout(() => { userInteracting = false; }, 2000);
+  startAutoSlide();
+}
+
+dots.forEach(dot => {
+  dot.addEventListener('click', (e) => {
+    const idx = parseInt(dot.getAttribute('data-idx'));
+    if (actual !== idx) {
+      actual = idx;
+      mostrarPortafolio(actual);
+      userDidInteract();
+    }
+  });
+});
+
+// Inicializar estado activo y slider automático
+document.addEventListener('DOMContentLoaded', () => {
+  img = document.getElementById('galeria-img');
   mostrarPortafolio(actual);
+  startAutoSlide();
 });
