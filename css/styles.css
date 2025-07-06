@@ -54,9 +54,27 @@ header nav ul {
   justify-content: center;
 }
 
+.nav-sections > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  box-sizing: border-box;
+}
+
 .nav-actions {
   display: flex;
   gap: 15px;
+}
+
+.nav-actions > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px; /* Igual que el hamburguesa */
+  padding-top: 0;
+  padding-bottom: 0;
+  box-sizing: border-box;
 }
 
 header nav ul li a {
@@ -69,9 +87,69 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: black;
+  color: #00dfd8;
   box-shadow: 0 2px 12px #00dfd8, 0 0 8px #ff003c;
   transform: translateY(-2px) scale(1.05);
+}
+
+#hamburguesa-nav {
+  position: relative;
+}
+
+#hamburguesa-nav a.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 0;
+}
+
+#hamburguesa-nav img {
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+  display: block;
+}
+
+#hamburguesa-nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: black;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  min-width: 140px;
+  z-index: 200;
+  padding: 10px 0;
+}
+
+#hamburguesa-nav .dropdown-menu li {
+  list-style: none;
+}
+
+#hamburguesa-nav .dropdown-menu li a {
+  display: block;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  font-family: "Arial", sans-serif;
+}
+
+#hamburguesa-nav .dropdown-menu li a:hover {
+  background: #000000;
+  color: #00dfd8;
+}
+
+#hamburguesa-nav:hover .dropdown-menu,
+#hamburguesa-nav:focus-within .dropdown-menu,
+#hamburguesa-nav .dropdown-menu:hover {
+  display: block;
 }
 
 .box-inicio {
@@ -89,4 +167,20 @@ header nav ul li a:hover {
 
 .boton-inicio {
   position: relative;
+}
+
+.icon-hamburguesa {
+  width: 75%;
+  height: 75%;
+  display: block;
+  background-image: url("../img/hamburguesa.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.2s;
+}
+
+/* Cambia la imagen al hacer hover en el botón */
+#hamburguesa-nav a.action:hover .icon-hamburguesa {
+  background-image: url("../img/hamburguesa_celeste.png");
 }
