@@ -152,23 +152,6 @@ header nav ul li a:hover {
   display: block;
 }
 
-.box-inicio {
-  display: flex;
-  position: absolute;
-  flex-direction: column;
-  justify-content: center;
-  background-color: black;
-  padding: 30px;
-  height: 300px;
-  margin: 10%;
-  font-size: 20px;
-  font-family: "Fahkwang", Arial, sans-serif;
-}
-
-.boton-inicio {
-  position: relative;
-}
-
 .icon-hamburguesa {
   width: 75%;
   height: 75%;
@@ -180,7 +163,44 @@ header nav ul li a:hover {
   transition: background-image 0.2s;
 }
 
-/* Cambia la imagen al hacer hover en el botón */
 #hamburguesa-nav a.action:hover .icon-hamburguesa {
   background-image: url("../img/hamburguesa_celeste.png");
+}
+
+.presentacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* O 100vh si quieres que ocupe toda la pantalla */
+  width: 100%;
+  position: relative;
+}
+
+.box-inicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  padding: 70px 40px 40px 40px;
+  width: 450px;
+  height: 550px;
+  font-size: 24px;
+  font-family: "Fahkwang", Arial, sans-serif;
+  text-align: center;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.boton-inicio {
+  margin-top: auto;
+  align-self: stretch;
+  position: absolute;
+  bottom: 90px;
+  left: 100px;
+  right: 100px;
 }
