@@ -171,9 +171,21 @@ header nav ul li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* O 100vh si quieres que ocupe toda la pantalla */
+  min-height: 100vh;
   width: 100%;
   position: relative;
+  background: linear-gradient(
+      to right,
+      transparent 49.9%,
+      #000000 49.9%,
+      #000000 50.1%,
+      transparent 50.1%
+    ),
+    url("https://img.impactotic.co/wp-content/uploads/2022/12/06073649/portafolio-digital.png")
+      left center/50% 100% no-repeat,
+    url("https://stonkstutors.com/wp-content/uploads/2025/05/image-28.png")
+      right center/50% 100% no-repeat;
+  background-color: #181818; /* color de fondo base */
 }
 
 .box-inicio {
@@ -210,11 +222,10 @@ header nav ul li a:hover {
   align-self: center;
   position: relative;
   text-transform: uppercase;
-  background: #1f4c6a;
+  background: #51758e;
   font-family: "Fahkwang", Arial, sans-serif;
   border: none;
   outline: none;
-  border-radius: 6px;
   overflow: hidden;
   transition: background 0.2s, color 0.2s, letter-spacing 0.2s, font-weight 0.2s;
 }
