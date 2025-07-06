@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Fahkwang:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgba(16, 15, 15, 0.978);
+  color: white;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header nav {
+  display: flex;
+  font-family: "Arial", sans-serif;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  background: black;
+  height: 60px;
+  position: relative;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 150px;
+  height: 40px;
+  object-fit: contain;
+}
+
+header nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-sections {
+  display: flex;
+  gap: 30px;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 15px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+header nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 12px #00dfd8, 0 0 8px #ff003c;
+  transform: translateY(-2px) scale(1.05);
+}
+
+.box-inicio {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  background-color: black;
+  padding: 30px;
+  height: 300px;
+  margin: 10%;
+  font-size: 20px;
+  font-family: "Fahkwang", Arial, sans-serif;
+}
+
+.boton-inicio {
+  position: relative;
+}
