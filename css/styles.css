@@ -646,7 +646,88 @@ header nav ul li a:hover {
 
 .contacto {
   display: flex;
+  flex-direction: column;
   padding: 50px;
-  height: 80vh;
   background-color: black;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.contacto h2 {
+  font-family: "Fahkwang", Arial, sans-serif;
+  font-weight: 200;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.contacto-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  gap: 40px;
+  border: none;
+} 
+
+.contacto-datos{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  min-width: 200px;
+  gap: 8px;
+} 
+
+.contacto-politicas{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 50%;
+  min-width: 200px;
+  gap: 8px;
+}
+
+.contacto-redes-container{
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 40px;
+  border-top: 1px solid #fff;
+  padding-top: 20px;
+}
+
+.contacto-redes-container_box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.contacto-redes-container_box img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  transition: transform 0.2s;
+}
+.contacto-redes-container_box img:hover {
+  transform: scale(1.15);
+}
+
+.contacto-redes-container_box p {
+  font-size: 14px;
+  margin: 0;
+  color: #fff;
+  opacity: 0.8;
+}
+
+footer {
+  color: #fff;
+  background-color: black;
+  padding: 20px;
 }
