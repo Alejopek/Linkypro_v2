@@ -100,6 +100,19 @@ function stopAutoSlide() {
   if (autoSlideInterval) clearInterval(autoSlideInterval);
 }
 
+// Smooth scroll para navegación interna
+
+document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const targetId = this.getAttribute('href').slice(1);
+    const targetSection = document.getElementById(targetId) || document.querySelector(`[name='${targetId}']`) || document.querySelector(`section.${targetId}`);
+    if (targetSection) {
+      e.preventDefault();
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
 // Detectar visibilidad de la galería
 const galeriaSection = document.querySelector('.muestras');
 const observer = new window.IntersectionObserver((entries) => {

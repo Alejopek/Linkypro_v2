@@ -182,10 +182,8 @@ header nav ul li a:hover {
       #000000 50.1%,
       transparent 50.1%
     ),
-    url("https://img.impactotic.co/wp-content/uploads/2022/12/06073649/portafolio-digital.png")
-      left center/50% 100% no-repeat,
-    url("https://stonkstutors.com/wp-content/uploads/2025/05/image-28.png")
-      right center/50% 100% no-repeat;
+    url("../img/side_left.png") left center/50% 100% no-repeat,
+    url("../img/side_right.png") right center/50% 100% no-repeat;
   background-color: #181818;
 }
 
@@ -282,8 +280,7 @@ header nav ul li a:hover {
       #000000 50.1%,
       transparent 50.1%
     ),
-    url("https://images.pexels.com/photos/7691753/pexels-photo-7691753.jpeg")
-      left center/50% 100% no-repeat,
+    url("../img/us_left.jpeg") left center/50% 100% no-repeat,
     url("") right center/50% 100% no-repeat;
   background-color: #181818;
 }
@@ -463,8 +460,7 @@ header nav ul li a:hover {
       #000000 50.1%,
       transparent 50.1%
     ),
-    url("https://images.pexels.com/photos/32845692/pexels-photo-32845692.jpeg")
-      left center/50% 100% no-repeat,
+    url("../img/muestras.jpg") left center/50% 100% no-repeat,
     url("") right center/50% 100% no-repeat;
   background-color: black;
 }
