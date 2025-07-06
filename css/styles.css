@@ -10,6 +10,7 @@ body {
   background-color: rgba(16, 15, 15, 0.978);
   color: white;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 header {
@@ -504,6 +505,7 @@ header nav ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .galeria-img-container img {
@@ -515,10 +517,6 @@ header nav ul li a:hover {
   position: absolute;
   left: 0;
   top: 0;
-}
-
-.galeria-img-container {
-  position: relative;
 }
 
 .galeria-img-container img.slide-in {
@@ -576,8 +574,6 @@ header nav ul li a:hover {
   border-color: #00dfd8;
 }
 
-
-
 .galeria-info {
   text-align: center;
   margin-bottom: 16px;
@@ -615,8 +611,6 @@ header nav ul li a:hover {
     opacity: 0;
   }
 }
-
-
 
 .galeria-controles {
   display: flex;
