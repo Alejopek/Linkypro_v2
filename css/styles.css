@@ -208,6 +208,9 @@ header nav ul li a:hover {
   justify-content: flex-start;
   position: relative;
   clip-path: inset(0 0 0 100%);
+}
+
+.box-inicio.revelar {
   animation: revelar 1s ease-out forwards;
 }
 
@@ -218,6 +221,7 @@ header nav ul li a:hover {
 }
 
 .boton-inicio {
+  text-decoration: none;
   color: #fff;
   cursor: pointer;
   display: block;
@@ -283,7 +287,7 @@ header nav ul li a:hover {
     ),
     url("../img/us_left.jpeg") left center/50% 100% no-repeat,
     url("") right center/50% 100% no-repeat;
-  background-color: #181818;
+  background-color: #000000;
 }
 
 .nosotros-container {
@@ -296,6 +300,18 @@ header nav ul li a:hover {
   margin-left: 50%;
   padding: 50px;
   padding-right: 18rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nosotros-container.revelar {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .nosotros-container h2 {
@@ -520,11 +536,11 @@ header nav ul li a:hover {
 }
 
 .galeria-img-container img.slide-in {
-  animation: slideInSoft 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+  animation: slideInSoft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   z-index: 2;
 }
 .galeria-img-container img.slide-out {
-  animation: slideOutSoft 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+  animation: slideOutSoft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   z-index: 1;
 }
 
@@ -584,10 +600,10 @@ header nav ul li a:hover {
 }
 
 .galeria-info.slide-in {
-  animation: slideInSoftText 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+  animation: slideInSoftText 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 .galeria-info.slide-out {
-  animation: slideOutSoftText 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+  animation: slideOutSoftText 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes slideInSoftText {
@@ -660,18 +676,18 @@ header nav ul li a:hover {
   font-size: 20px;
   gap: 40px;
   border: none;
-} 
+}
 
-.contacto-datos{
+.contacto-datos {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 50%;
   min-width: 200px;
   gap: 8px;
-} 
+}
 
-.contacto-politicas{
+.contacto-politicas {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -680,7 +696,7 @@ header nav ul li a:hover {
   gap: 8px;
 }
 
-.contacto-redes-container{
+.contacto-redes-container {
   display: flex;
   flex-direction: row;
   gap: 40px;
@@ -692,7 +708,7 @@ header nav ul li a:hover {
   padding-top: 20px;
 }
 
-.contacto-redes-container_box{
+.contacto-redes-container_box {
   display: flex;
   flex-direction: column;
   align-items: center;
