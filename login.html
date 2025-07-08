@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo-container">
+          <a href="#inicio">
+            <img src="img/logo.png" alt="Logo" class="logo" />
+          </a>
+        </div>
+        <ul class="nav-sections">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#nosotros">Acerca de nosotros</a></li>
+        </ul>
+        <ul class="nav-actions">
+          <li><a href="login.html" class="action">Login</a></li>
+          <li><a href="#register" class="action">Registrarse</a></li>
+          <li id="hamburguesa-nav">
+            <a href="#more" class="action">
+              <span class="icon-hamburguesa"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#personas">Personas</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+              <li><a href="#precios">Precios</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="body"></div>
+    <div class="grad"></div>
+    <div class="login">
+      <div
+        class="login-header"
+        style="margin-bottom: 26px; width: 100%; text-align: left"
+      >
+        <span
+          style="
+            font-family: 'Exo', sans-serif;
+            font-size: 35px;
+            color: #fff;
+            font-weight: 200;
+            letter-spacing: 1px;
+          "
+          >Linky<span style="color: #5379fa">Pro</span></span
+        >
+      </div>
+      <input
+        type="text"
+        placeholder="username"
+        name="user"
+        style="margin-left: 0"
+      /><br />
+      <input
+        type="password"
+        placeholder="password"
+        name="password"
+        style="margin-left: 0"
+      /><br />
+      <input type="button" value="Login" style="margin-left: 0" />
+    </div>
+  </body>
+</html>
